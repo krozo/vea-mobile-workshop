@@ -3,7 +3,7 @@ class TestAddFilter
   attr_accessor :driver
   def initialize(screens)
     @screens = screens
-    @filter_data = Filter.new('property_positive')
+    @filter_data = Filter.new('property_filter')
   end
 
   def close_intro
@@ -33,7 +33,8 @@ class TestAddFilter
 
   def test_enter_positive_parameters
     # @screens.screen_enter_filter.enter_filter_name('adsafsa')
-    @screens.screen_enter_filter.enter_filter_name(@filter_data.enter_properties('test'))
+    # @screens.screen_enter_filter.enter_filter_name(@filter_data.enter_properties('positive'))
+    @screens.screen_enter_filter.enter_filter_name(@filter_data.enter_properties('negative'))
 
     # print @filter_data.enter_properties('test')
 

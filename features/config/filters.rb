@@ -1,6 +1,6 @@
 require 'yaml'
 class Filter
-  attr_accessor :name, :category, :sub_categories, :parameters
+  attr_accessor :name, :category, :sub_categories, :parameters_positive, :parameters_negative
 
   def initialize(type)
     config = YAML.load_file('features/config/filters.yml')[type]
@@ -11,17 +11,31 @@ class Filter
       @sub_categories.push sub_cat
     end
 
-    @parameters = []
-    config['parameters'].each do |parameter|
-      @parameters.push parameter
+    @parameters_positive = []
+    config['parameters_positive'].each do |parameter|
+      @parameters_positive.push parameter
     end
+
+    @parameters_negative = []
+    config['parameters_negative'].each do |parameter|
+      @parameters_negative.push parameter
+    end
+
+    
   end
 
-  def enter_properties(backArg)
-    @parameters.each do |parameter|
-      if parameter['name'] == 'NOSAUKUMS'
-        backArg = parameter['filter_name']
-        return backArg
+  def enter_properties(type)
+    if type == 'positive'
+      @parameters_positive.each do |parameter|
+        if parameter['name'] == 'NOSAUKUMS'
+          return parameter['filter_name']
+        end
+      end
+    elsif type == 'negative'
+      @parameters_negative.each do |parameter|
+        if parameter['name'] == 'NOSAUKUMS'
+          return parameter['filter_name']
+        end
       end
     end
   end
@@ -33,8 +47,13 @@ class Filter
     @sub_categories.each do |sub_cat|
       print "\n\t - " + sub_cat['title'] + ' ' + sub_cat['option']
     end
-    print "\nParameters:"
-    @parameters.each do |parameter|
+    print "\Parameters positive:"
+    @parameters_positive.each do |parameter|
+      print "\n\t - " + parameter['name'] + ' ' + parameter['left'] + ' ' + parameter['right']
+    end
+
+    print "\Parameters negative:"
+    @parameters_negative.each do |parameter|
       print "\n\t - " + parameter['name'] + ' ' + parameter['left'] + ' ' + parameter['right']
     end
     print "\n\n"

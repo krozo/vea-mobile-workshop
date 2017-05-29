@@ -1,4 +1,4 @@
-property_positive:
+property_filter:
   name: 'Filter 1'
   category: 'Nekustamie īpašumi'
   sub_categories:
@@ -14,7 +14,7 @@ property_positive:
     - sub_category:
       title: 'Darbība'
       option: 'Pērk'
-  parameters:
+  parameters_positive:
     - parameter:
       name: 'NOSAUKUMS'
       filter_name: 'name or... or, bla?'
@@ -26,4 +26,16 @@ property_positive:
       name: 'PLATĪBA (M2)'
       left: '1'
       right: '3000'
+  parameters_negative:
+    - parameter:
+      name: 'NOSAUKUMS'
+      filter_name: ''
+    - parameter:
+      name: 'CENA (EUR)'
+      left: ''
+      right: ''
+    - parameter:
+      name: 'PLATĪBA (M2)'
+      left: ''
+      right: ''
   
