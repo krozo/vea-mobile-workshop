@@ -4,17 +4,20 @@ property_positive:
   sub_categories:
     - sub_category:
       title: 'Nekustamie īpašumi'
-      option: 'Biroji'
+      option: 'Zeme'
     - sub_category:
-      title: 'Biroji'
-      option: 'Balvi un rajons'
+      title: 'Zeme'
+      option: 'Jūrmala'
     - sub_category:
-      title: 'Balvi un rajons'
-      option: 'Balvi'
+      title: 'Jūrmala'
+      option: 'Bulduri'
     - sub_category:
       title: 'Darbība'
-      option: 'Visi'
+      option: 'Pērk'
   parameters:
+    - parameter:
+      name: 'NOSAUKUMS'
+      name_field: 'name or... or, bla bla bla?'
     - parameter:
       name: 'CENA (EUR)'
       left: '1'
