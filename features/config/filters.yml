@@ -4,13 +4,13 @@ property_positive:
   sub_categories:
     - sub_category:
       title: 'Nekustamie īpašumi'
-      option: 'Zeme'
+      option: 'Biroji'
     - sub_category:
-      title: 'Zeme'
-      option: 'Ventspils un rajons'
+      title: 'Biroji'
+      option: 'Balvi un rajons'
     - sub_category:
-      title: 'Ventspils un rajons'
-      option: 'Visi'
+      title: 'Balvi un rajons'
+      option: 'Balvi'
     - sub_category:
       title: 'Darbība'
       option: 'Visi'

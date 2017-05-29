@@ -30,7 +30,8 @@ Given /^I am on intro screen$/ do
 end
 # Uzd: 4.2 un 5.2
 Then /^Navigate to create “Nekustamie īpašumi” filter parameters page$/ do
-
+    @tests.test_add_filter.close_intro
+    @tests.test_add_filter.open_filter_parameter_screen
 end
    
 # Given /^I create property filter$/ do
@@ -39,7 +40,7 @@ end
 # end
 # Uzd: 4.3
 And /^Leave all parameter fields empty$/ do
-
+    @screens.screen_enter_filter.visible?
 end
 # Uzd: 5.3
 And /^Fill in filter Name (Nosaukums) and Price (Cena) fields with valid data$/ do
@@ -48,7 +49,7 @@ end
    
 # Uzd: 4.4 un 5.4
 Then /^Press filter save button$/ do
-
+    @screens.screen_enter_filter.enter_save_button
 end
    
 # Uzd: 4.5
