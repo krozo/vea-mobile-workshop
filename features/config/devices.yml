@@ -1,4 +1,4 @@
 devices:
-  - 'gggggg'
+  - '192.168.56.101:5555'
 port: 5500
 boot_port: 5600
