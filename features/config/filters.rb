@@ -1,6 +1,6 @@
 require 'yaml'
 class Filter
-  attr_accessor :name, :category, :sub_categories, :parameters_positive, :parameters_negative
+  attr_accessor :name, :category, :sub_categories, :parameters_positive, :parameters_negative, :tmp_param, :side_array
 
   def initialize(type)
     config = YAML.load_file('features/config/filters.yml')[type]
@@ -24,21 +24,28 @@ class Filter
     
   end
 
-  def enter_properties(type)
-    if type == 'positive'
-      @parameters_positive.each do |parameter|
-        if parameter['name'] == 'NOSAUKUMS'
+  def enter_properties(filter_type, param_type)
+    if filter_type == 'positive'
+      @tmp_param = @parameters_positive;
+    elsif filter_type == 'negative'
+      @tmp_param = @parameters_negative
+    end
+
+    @tmp_param.each do |parameter|
+        if parameter[param_type] == 'NOSAUKUMS'
           return parameter['filter_name']
+        elsif parameter[param_type] == 'CENA (EUR)'
+          @side_array = []
+          @side_array.push parameter['left']
+          @side_array.push parameter['right']
+          return @side_array
+        elsif parameter[param_type] == 'dsfsddsf'
+          return parameter['left']
         end
-      end
-    elsif type == 'negative'
-      @parameters_negative.each do |parameter|
-        if parameter['name'] == 'NOSAUKUMS'
-          return parameter['filter_name']
-        end
-      end
     end
   end
+
+        
 
   def print_properties
     print 'Name:' + @name

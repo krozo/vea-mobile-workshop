@@ -33,8 +33,11 @@ class TestAddFilter
 
   def test_enter_positive_parameters
     # @screens.screen_enter_filter.enter_filter_name('adsafsa')
-    # @screens.screen_enter_filter.enter_filter_name(@filter_data.enter_properties('positive'))
-    @screens.screen_enter_filter.enter_filter_name(@filter_data.enter_properties('negative'))
+    types = ['name', 'price', 'area']
+    @screens.screen_enter_filter.enter_filter_name(@filter_data.enter_properties('positive', types[0]), types[0])
+    # @screens.screen_enter_filter.enter_filter_name(@filter_data.enter_properties('positive', types[1]), types[1])
+    # print @filter_data.enter_properties('positive', types[1])
+    # print @filter_data.enter_properties('positive', types[2])
 
     # print @filter_data.enter_properties('test')
 
