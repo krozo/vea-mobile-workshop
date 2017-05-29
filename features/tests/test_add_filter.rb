@@ -31,4 +31,12 @@ class TestAddFilter
     end
   end
 
+  def test_enter_positive_parameters
+    # @screens.screen_enter_filter.enter_filter_name('adsafsa')
+    @screens.screen_enter_filter.enter_filter_name(@filter_data.enter_properties('test'))
+
+    # print @filter_data.enter_properties('test')
+
+  end
+
 end

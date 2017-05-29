@@ -41,7 +41,8 @@ end
 # Uzd: 4.3
 And /^Leave all parameter fields empty$/ do
     @screens.screen_enter_filter.visible?
-    @screens.screen_enter_filter.enter_filter_name('tetstesgsegsdgsdg')
+
+    @tests.test_add_filter.test_enter_positive_parameters
 end
 # Uzd: 5.3
 And /^Fill in filter Name (Nosaukums) and Price (Cena) fields with valid data$/ do

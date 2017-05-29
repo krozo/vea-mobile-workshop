@@ -17,7 +17,7 @@ property_positive:
   parameters:
     - parameter:
       name: 'NOSAUKUMS'
-      name_field: 'name or... or, bla bla bla?'
+      filter_name: 'name or... or, bla?'
     - parameter:
       name: 'CENA (EUR)'
       left: '1'
@@ -26,3 +26,4 @@ property_positive:
       name: 'PLATĪBA (M2)'
       left: '1'
       right: '3000'
+  

@@ -10,9 +10,19 @@ class Filter
     config['sub_categories'].each do |sub_cat|
       @sub_categories.push sub_cat
     end
+
     @parameters = []
     config['parameters'].each do |parameter|
       @parameters.push parameter
+    end
+  end
+
+  def enter_properties(backArg)
+    @parameters.each do |parameter|
+      if parameter['name'] == 'NOSAUKUMS'
+        backArg = parameter['filter_name']
+        return backArg
+      end
     end
   end
 
