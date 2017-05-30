@@ -51,6 +51,59 @@ Given /^Validate third Slideshow screen$/ do
     @screens.screen_intro.visible?('third')
 end
 
+# Exercise Nr.2
+Then /^Click “UZ APLIKĀCIJU” button$/ do
+    
+end
+
+Given /^Validate application landing screen$/ do
+    
+end
+
+Then /^Click Side menu button$/ do
+    
+end
+
+Given /^Validate Side menu$/ do
+    
+end
+
+Given /^Click “Paziņojumi”$/ do
+    
+end
+
+Given /^Validate Notifications page$/ do
+    
+end
+
+Given /^Click “Favorīti”$/ do
+    
+end
+
+Given /^Validate Favorites page$/ do
+    
+end
+
+Then /^Click “Meklēšanas filtri”$/ do
+    
+end
+
+Then /^Click “Izveidot filtru”$/ do
+    
+end
+
+# Exercise Nr.3
+And /^Open existing filter$/ do
+    
+end
+
+Then /^Click Delete button$/ do
+    
+end
+
+Given /^Validate Filter page and check if filter is removed$/ do
+    
+end
 
 # Exercises: 4.2 un 5.2
 Then /^Navigate to create “Nekustamie īpašumi” filter parameters page$/ do
@@ -65,12 +118,12 @@ end
 # Exercise: 4.3
 And /^Leave all parameter fields empty$/ do
     @screens.screen_enter_filter.visible?
-
-    @tests.test_add_filter.test_enter_positive_parameters
+    @tests.test_add_filter.test_enter_positive_parameters('negative')
 end
 # Exercise: 5.3
 And /^Fill in filter Name (Nosaukums) and Price (Cena) fields with valid data$/ do
-
+    @screens.screen_enter_filter.visible?
+    @tests.test_add_filter.test_enter_positive_parameters('positive')
 end
    
 # Exercise: 4.4 and 5.4
@@ -80,10 +133,10 @@ end
    
 # Exercise: 4.5
 Given /^Parameter page visible$/ do
-
+    @screens.screen_enter_filter.visible?
 end  
 # Exercise: 5.1 
 Given /^Validate Filter page$/ do
-
+    
 end
    

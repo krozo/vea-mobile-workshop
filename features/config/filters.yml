@@ -13,7 +13,7 @@ property_filter:
       option: 'Bulduri'
     - sub_category:
       title: 'Darbība'
-      option: 'Pērk'
+      option: 'Visi'
   parameters_positive:
     - parameter:
       name: 'NOSAUKUMS'
