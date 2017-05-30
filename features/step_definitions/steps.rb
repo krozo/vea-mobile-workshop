@@ -21,14 +21,38 @@
 # For more on rspec assertions, check out
 # https://www.relishapp.com/rspec/rspec-expectations/docs
 
-# Uzd: 4.1 un 5.1
+
+
+# Exercises: 1.1 un 4.1 un 5.1
 Given /^I am on intro screen$/ do
     if $driver.find_elements(:xpath, '//android.widget.Button[contains(@text, "OK")]').size > 0
         $driver.find_element(:xpath, '//android.widget.Button[contains(@text, "OK")]').click
     end
-    @screens.screen_intro.visible?
+    @screens.screen_intro.visible?('global')
 end
-# Uzd: 4.2 un 5.2
+# Exercises: 1.2, 1.3, 1.4, 1.5, 1.6
+Given /^Validate first Slideshow screen$/ do
+    @screens.screen_intro.visible?('first')
+end
+
+Then /^Swipe to second Slideshow screen$/ do
+    @screens.screen_intro.swipe('right')
+end
+
+Given /^Validate second Slideshow screen$/ do
+    @screens.screen_intro.visible?('second')
+end
+
+Then /^Swipe to third Slideshow screen$/ do
+    @screens.screen_intro.swipe('right')
+end
+
+Given /^Validate third Slideshow screen$/ do
+    @screens.screen_intro.visible?('third')
+end
+
+
+# Exercises: 4.2 un 5.2
 Then /^Navigate to create “Nekustamie īpašumi” filter parameters page$/ do
     @tests.test_add_filter.close_intro
     @tests.test_add_filter.open_filter_parameter_screen
@@ -38,27 +62,27 @@ end
 #     @tests.test_add_filter.close_intro
 #     @tests.test_add_filter.open_filter_parameter_screen
 # end
-# Uzd: 4.3
+# Exercise: 4.3
 And /^Leave all parameter fields empty$/ do
     @screens.screen_enter_filter.visible?
 
     @tests.test_add_filter.test_enter_positive_parameters
 end
-# Uzd: 5.3
+# Exercise: 5.3
 And /^Fill in filter Name (Nosaukums) and Price (Cena) fields with valid data$/ do
 
 end
    
-# Uzd: 4.4 un 5.4
+# Exercise: 4.4 and 5.4
 Then /^Press filter save button$/ do
     @screens.screen_enter_filter.enter_save_button
 end
    
-# Uzd: 4.5
+# Exercise: 4.5
 Given /^Parameter page visible$/ do
 
 end  
-# Uzd: 5.1 
+# Exercise: 5.1 
 Given /^Validate Filter page$/ do
 
 end

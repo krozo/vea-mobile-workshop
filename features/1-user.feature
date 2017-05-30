@@ -4,13 +4,24 @@ Feature: 1. Filter feature
   #   Given I am on intro screen
   #   When I create property filter
 
-Scenario: “Nekustamie īpašumi” filter - negative
+# Exercise Nr.1
+Scenario: Validate Slideshow
   Given I am on intro screen
-  Then Navigate to create “Nekustamie īpašumi” filter parameters page
-  And Leave all parameter fields empty
-  Then Press filter save button
-  # Given Parameter page visible
+  Given Validate first Slideshow screen
+  Then Swipe to second Slideshow screen
+  Given Validate second Slideshow screen
+  Then Swipe to third Slideshow screen
+  Given Validate third Slideshow screen
 
+# Exercise Nr.4
+# Scenario: “Nekustamie īpašumi” filter - negative
+#   Given I am on intro screen
+#   Then Navigate to create “Nekustamie īpašumi” filter parameters page
+#   And Leave all parameter fields empty
+#   Then Press filter save button
+#   # Given Parameter page visible
+
+# Exercise Nr.5
 # Scenario: “Nekustamie īpašumi” filter - positive
 #   Given I am on intro screen
 #   Then Navigate to create “Nekustamie īpašumi” filter parameters page
