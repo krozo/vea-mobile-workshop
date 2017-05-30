@@ -7,7 +7,7 @@ class TestAddFilter
   end
 
   def close_intro
-    @screens.screen_intro.visible?
+    @screens.screen_intro.visible?('global')
     @screens.screen_intro.close_intro
   end
 
