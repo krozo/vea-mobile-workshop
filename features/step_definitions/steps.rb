@@ -25,14 +25,18 @@
 
 # Exercises: 1.1 un 4.1 un 5.1
 Given /^I am on intro screen$/ do
-    if $driver.find_elements(:xpath, '//android.widget.Button[contains(@text, "OK")]').size > 0
-        $driver.find_element(:xpath, '//android.widget.Button[contains(@text, "OK")]').click
-    end
-    @screens.screen_intro.visible?('global')
+    # if @screens.screen_intro.visible_slide('global') == true
+        if $driver.find_elements(:xpath, '//android.widget.Button[contains(@text, "OK")]').size > 0
+            $driver.find_element(:xpath, '//android.widget.Button[contains(@text, "OK")]').click
+        end
+    # elsif @screens.screen_create_filter.visible? == true
+    #     print 'ff'
+    # end
+    @screens.screen_intro.visible_slide('global')
 end
 # Exercises: 1.2, 1.3, 1.4, 1.5, 1.6
 Given /^Validate first Slideshow screen$/ do
-    @screens.screen_intro.visible?('first')
+    @screens.screen_intro.visible_slide('first')
 end
 
 Then /^Swipe to second Slideshow screen$/ do
@@ -40,7 +44,7 @@ Then /^Swipe to second Slideshow screen$/ do
 end
 
 Given /^Validate second Slideshow screen$/ do
-    @screens.screen_intro.visible?('second')
+    @screens.screen_intro.visible_slide('second')
 end
 
 Then /^Swipe to third Slideshow screen$/ do
@@ -48,7 +52,7 @@ Then /^Swipe to third Slideshow screen$/ do
 end
 
 Given /^Validate third Slideshow screen$/ do
-    @screens.screen_intro.visible?('third')
+    @screens.screen_intro.visible_slide('third')
 end
 
 # Exercise Nr.2
@@ -116,14 +120,14 @@ end
 #     @tests.test_add_filter.open_filter_parameter_screen
 # end
 # Exercise: 4.3
-And /^Leave all parameter fields empty$/ do
+Then /^Leave all parameter fields empty$/ do
     @screens.screen_enter_filter.visible?
-    @tests.test_add_filter.test_enter_positive_parameters('negative')
+    @tests.test_add_filter.test_enter_parameters('negative')
 end
 # Exercise: 5.3
-And /^Fill in filter Name (Nosaukums) and Price (Cena) fields with valid data$/ do
+Then /^Fill in filter Name and Price fields with valid data$/ do
     @screens.screen_enter_filter.visible?
-    @tests.test_add_filter.test_enter_positive_parameters('positive')
+    @tests.test_add_filter.test_enter_parameters('positive')
 end
    
 # Exercise: 4.4 and 5.4
@@ -135,8 +139,8 @@ end
 Given /^Parameter page visible$/ do
     @screens.screen_enter_filter.visible?
 end  
-# Exercise: 5.1 
+# Exercise: 5.5 
 Given /^Validate Filter page$/ do
-    
+    @screens.screen_filter_page.visible?
 end
    

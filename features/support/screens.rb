@@ -22,4 +22,9 @@ class Screens
     @screen_enter_filter ||= ScreenEnterFilter.new @driver
     @screen_enter_filter
   end
+
+  def screen_filter_page
+    @screen_filter_page ||= ScreenFilter.new @driver
+    @screen_filter_page
+  end
 end

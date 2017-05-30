@@ -19,7 +19,7 @@ class ScreenIntro
 
 
 
-    def visible?(type)
+    def visible_slide(type)
         if type == 'global'
             @button_to_app.visible?
         elsif type == 'first'

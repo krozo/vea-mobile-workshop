@@ -51,17 +51,17 @@ Feature: 1. Filter feature
 #   Given Validate Filter page and check if filter is removed
 
 # Exercise Nr.4
-Scenario: “Nekustamie īpašumi” filter - negative
-  Given I am on intro screen
-  Then Navigate to create “Nekustamie īpašumi” filter parameters page
-  And Leave all parameter fields empty
-  Then Press filter save button
-  # Given Parameter page visible
-
-# Exercise Nr.5
-# Scenario: “Nekustamie īpašumi” filter - positive
+# Scenario: “Nekustamie īpašumi” filter - negative
 #   Given I am on intro screen
 #   Then Navigate to create “Nekustamie īpašumi” filter parameters page
-#   And Fill in filter Name (Nosaukums) and Price (Cena) fields with valid data
+#   Then Leave all parameter fields empty
 #   Then Press filter save button
-#   Given Validate Filter page
+#   Given Parameter page visible
+
+# Exercise Nr.5
+Scenario: “Nekustamie īpašumi” filter - positive
+  Given I am on intro screen
+  Then Navigate to create “Nekustamie īpašumi” filter parameters page
+  Then Fill in filter Name and Price fields with valid data
+  Then Press filter save button
+  Given Validate Filter page
