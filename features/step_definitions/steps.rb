@@ -23,7 +23,7 @@
 
 
 
-# Exercises: 1.1 un 4.1 un 5.1
+# Exercises: 1.1
 Given /^I am on intro screen$/ do
     # if @screens.screen_intro.visible_slide('global') == true
         if $driver.find_elements(:xpath, '//android.widget.Button[contains(@text, "OK")]').size > 0
@@ -33,6 +33,11 @@ Given /^I am on intro screen$/ do
     #     print 'ff'
     # end
     @screens.screen_intro.visible_slide('global')
+end
+# Exercises: 4.1 un 5.1
+Given /^Launch application$/ do
+    # @screens.screen_intro.visible_slide('global')
+    @screens.screen_create_filter.visible?
 end
 # Exercises: 1.2, 1.3, 1.4, 1.5, 1.6
 Given /^Validate first Slideshow screen$/ do
@@ -57,7 +62,8 @@ end
 
 # Exercise Nr.2
 Then /^Click “UZ APLIKĀCIJU” button$/ do
-    @screens.screen_intro.close_intro
+    # @screens.screen_intro.close_intro
+    @tests.test_add_filter.close_intro
 end
 
 Given /^Validate application landing screen$/ do
@@ -111,7 +117,7 @@ end
 
 # Exercises: 4.2 un 5.2
 Then /^Navigate to create “Nekustamie īpašumi” filter parameters page$/ do
-    @tests.test_add_filter.close_intro
+    # @tests.test_add_filter.close_intro
     @tests.test_add_filter.open_filter_parameter_screen
 end
    
