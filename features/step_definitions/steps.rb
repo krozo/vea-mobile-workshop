@@ -57,43 +57,43 @@ end
 
 # Exercise Nr.2
 Then /^Click “UZ APLIKĀCIJU” button$/ do
-    
+    @screens.screen_intro.close_intro
 end
 
 Given /^Validate application landing screen$/ do
-    
+    @screens.screen_create_filter.visible?
 end
 
 Then /^Click Side menu button$/ do
-    
+    @screens.screen_side_menu.open_side_menu
 end
 
 Given /^Validate Side menu$/ do
-    
+    @screens.screen_side_menu.visible?
 end
 
 Given /^Click “Paziņojumi”$/ do
-    
+    @screens.screen_side_menu.click_notification
 end
 
 Given /^Validate Notifications page$/ do
-    
+    @screens.screen_notification.visible?
 end
 
 Given /^Click “Favorīti”$/ do
-    
+    @screens.screen_side_menu.click_favorite
 end
 
 Given /^Validate Favorites page$/ do
-    
+    @screens.screen_favorites.visible?
 end
 
 Then /^Click “Meklēšanas filtri”$/ do
-    
+    @screens.screen_side_menu.click_search_filter
 end
 
 Then /^Click “Izveidot filtru”$/ do
-    
+    @screens.screen_side_menu.click_create_filter
 end
 
 # Exercise Nr.3

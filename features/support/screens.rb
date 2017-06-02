@@ -27,4 +27,20 @@ class Screens
     @screen_filter_page ||= ScreenFilter.new @driver
     @screen_filter_page
   end
+
+  def screen_side_menu
+    @screen_side_menu ||= ScreenSideMenu.new @driver
+    @screen_side_menu
+  end
+
+  def screen_favorites
+    @screen_favorites ||= ScreenFavorites.new @driver
+    @screen_favorites
+  end
+
+  def screen_notification
+    @screen_notification ||= ScreenNotification.new @driver
+    @screen_notification
+  end
+
 end
