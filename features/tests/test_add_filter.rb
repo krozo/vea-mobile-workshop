@@ -35,6 +35,7 @@ class TestAddFilter
     types = ['name', 'price', 'area']
     @screens.screen_enter_filter.enter_filter_name(@filter_data.enter_properties(parameter_type, types[0]), types[0])
     @screens.screen_enter_filter.enter_filter_name(@filter_data.enter_properties(parameter_type, types[1]), types[1])
+    @screens.screen_enter_filter.enter_filter_name(@filter_data.enter_properties(parameter_type, types[2]), types[2])
 
   end
 

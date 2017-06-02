@@ -39,8 +39,11 @@ class Filter
           @side_array.push parameter['left']
           @side_array.push parameter['right']
           return @side_array
-        elsif parameter[param_type] == 'dsfsddsf'
-          return parameter['left']
+        elsif parameter[param_type] == 'PLATĪBA (M2)'
+          @side_array = []
+          @side_array.push parameter['left']
+          @side_array.push parameter['right']
+          return @side_array
         end
     end
   end
