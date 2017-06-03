@@ -12,19 +12,22 @@ class ScreenFilter
     end
 
     def open_filter_editor(name_to_remove)
-        print @fitler_names.length
         # if $driver.find_elements(:xpath, '//android.widget.TextView[contains(@id, "row_filter_name")]') == name
         #     $driver.find_element(:xpath, '//android.widget.TextView[contains(@id, "row_filter_name")]').click
         # end
-        idx = 0
-        @fitler_names.each do |name|
-            if name == name_to_remove
-                @fitler_names[idx].click
-                print @fitler_names[idx]
-                break
-            end
-            idx = idx + 1
-        end
+
+        # idx = 0
+        # @fitler_names.each do |name|
+        #     if name == name_to_remove
+        #         @fitler_names[idx].click
+        #         break
+        #     end
+        #     idx = idx + 1
+        # end
+
+        # if $driver.find_elements(:xpath, '//android.widget.TextView[contains(@id, "row_filter_name")]').length > 0
+            $driver.find_element(:xpath, '//android.widget.TextView[contains(@text,"name or... or, bla?")]').click
+        # end
     end
 
     def remove_and_check(name)
@@ -45,7 +48,11 @@ class ScreenFilter
     # end
 
     def check_filter_exist(name)
-        @fitler_names[name].visible?
+        if $driver.find_elements(:xpath, '//android.widget.TextView[contains(@text,"name or... or, bla?")]').size == 0
+            print 'Removed!!!  '
+        else
+            $driver.find_element(:xpath, '//android.widget.TextView[contains(@text,"name or... or, bla?")]').visible?
+        end
     end
 
 

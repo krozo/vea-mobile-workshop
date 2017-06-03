@@ -3,8 +3,8 @@ class ScreenFilterEditPage
         @driver = driver
 
 
-        @save_button = Element.new(:xpath, '//android.widget.TextView[contains(@id, "save_filter")]', @driver)
-        @remove_button = Element.new(:xpath, '//android.widget.TextView[contains(@id, "delete_filter")]', @driver)
+        @save_button = Element.new(:xpath, '//android.widget.TextView[contains(@content-desc, "Saglabāt")]', @driver)
+        @remove_button = Element.new(:xpath, '//android.widget.TextView[contains(@content-desc, "Dzēst")]', @driver)
     end
 
     def visible?
