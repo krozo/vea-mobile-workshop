@@ -104,15 +104,17 @@ end
 
 # Exercise Nr.3
 And /^Open existing filter$/ do
-    
+    @screens.screen_filter_page.open_filter_editor('name or... or, bla?')
 end
 
 Then /^Click Delete button$/ do
-    
+    @screens.screen_filter_edit_page.visible?
+    @screens.screen_filter_edit_page.remove_filter
 end
 
 Given /^Validate Filter page and check if filter is removed$/ do
-    
+    @screens.screen_filter_page.visible?
+    @screens.screen_filter_page.check_filter_exist('name or... or, bla?')
 end
 
 # Exercises: 4.2 un 5.2

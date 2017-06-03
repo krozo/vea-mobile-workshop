@@ -28,6 +28,11 @@ class Screens
     @screen_filter_page
   end
 
+  def screen_filter_edit_page
+    @screen_filter_edit_page ||= ScreenFilterEditPage.new @driver
+    @screen_filter_edit_page
+  end
+
   def screen_side_menu
     @screen_side_menu ||= ScreenSideMenu.new @driver
     @screen_side_menu
